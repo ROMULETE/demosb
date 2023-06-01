@@ -8,18 +8,18 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import ec.edu.insteclrg.dto.ProvinciaDTO;
-import ec.edu.insteclrg.service.crud.ProvinciaService;
+import ec.edu.insteclrg.dto.PaisDTO;
+import ec.edu.insteclrg.service.crud.PaisService;
 
 @RestController
-@RequestMapping("/api/v1.0/provincia/")
-public class ProvinciaController {
+@RequestMapping("/api/v1.0/pais/")
+public class PaisController {
 
 	@Autowired
-	ProvinciaService service;
+	PaisService service;
 
 	@PostMapping
-	public ResponseEntity<Object> guardar(@RequestBody ProvinciaDTO dto) {
+	public ResponseEntity<Object> guardar(@RequestBody PaisDTO dto) {
 		service.save(dto);
 		return new ResponseEntity<>("Guardado correctamente", HttpStatus.OK);
 	}
